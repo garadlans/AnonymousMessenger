@@ -4,3 +4,6 @@ D:\Visual Studio\MessengerCore\MessengerCore\bin\Debug\MessengerCore.pdb
 D:\Visual Studio\MessengerCore\MessengerCore\obj\Debug\MessengerCore.csprojResolveAssemblyReference.cache
 D:\Visual Studio\MessengerCore\MessengerCore\obj\Debug\MessengerCore.exe
 D:\Visual Studio\MessengerCore\MessengerCore\obj\Debug\MessengerCore.pdb
+D:\Visual Studio\AnonymousMessenger\MessengerServer\MessengerCore\MessengerCore\bin\Debug\MessengerCore.exe.config
+D:\Visual Studio\AnonymousMessenger\MessengerServer\MessengerCore\MessengerCore\obj\Debug\MessengerCore.exe
+D:\Visual Studio\AnonymousMessenger\MessengerServer\MessengerCore\MessengerCore\obj\Debug\MessengerCore.pdb
