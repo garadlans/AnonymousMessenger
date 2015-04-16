@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerCore", "MessengerCore\MessengerCore.csproj", "{B8D44F95-260B-4CE9-B132-232A6437AD7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerCoreHost", "MessengerCore\MessengerCoreHost.csproj", "{B8D44F95-260B-4CE9-B132-232A6437AD7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerCoreLib", "MessengerCoreLib\MessengerCoreLib.csproj", "{AEFA6812-12D5-49D8-84F4-6614FC5BBC0E}"
 EndProject
