@@ -10,7 +10,7 @@ namespace MessengerCoreLib
     [Serializable]
     public class User : ISerializable
     {
-        public User(long id, bool online, string name)
+        public User(int id, bool online, string name)
         {
             Username = name;
             Online = online;
@@ -19,7 +19,7 @@ namespace MessengerCoreLib
 
         public string Username { get; set; }
         public bool Online { get; set; }
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         public string UserStatus { get; set; }
 

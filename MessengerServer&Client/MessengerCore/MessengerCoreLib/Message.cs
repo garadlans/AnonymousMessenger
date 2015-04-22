@@ -6,7 +6,7 @@ namespace MessengerCoreLib
     [Serializable]
     public class Message : ISerializable
     {
-        public Message(long sender, long getter, string text, DateTime time)
+        public Message(int sender, int getter, string text, DateTime time)
         {
             SenderId = sender;
             RecipientId = getter;
@@ -14,8 +14,8 @@ namespace MessengerCoreLib
             Time = Time;
         }
 
-        public long SenderId { get; set; }
-        public long RecipientId { get; set; }
+        public int SenderId { get; set; }
+        public int RecipientId { get; set; }
         public string Text { get; set; }
         public DateTime Time { get; set; }
 
