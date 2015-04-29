@@ -11,7 +11,11 @@ namespace MessengerCoreTests
     public class Sample
     {
         [Test]
+<<<<<<< HEAD
         public void DayabaseTestInsert()
+=======
+        public void DayabaseTestINSERT()
+>>>>>>> origin/master
         {
 
             var DbName = "Messenger";
@@ -27,7 +31,11 @@ namespace MessengerCoreTests
                                                  "Data Source=" + DbHost + ";" +
                                                  "User Id=" + DbUser + ";" +
                                                  "Password=" + DbPass),
+<<<<<<< HEAD
                 CommandText = "INSERT INTO `messenger`.`users` (`name`) VALUES ('Pechenka');" 
+=======
+                CommandText = "INSERT INTO `messenger`.`users` (`name`) VALUES ('Name');" 
+>>>>>>> origin/master
             };
 
             command.Connection.Open();
@@ -55,7 +63,11 @@ namespace MessengerCoreTests
                                                  "Data Source=" + DbHost + ";" +
                                                  "User Id=" + DbUser + ";" +
                                                  "Password=" + DbPass),
+<<<<<<< HEAD
                 CommandText = "SELECT name FROM " + DataBaseLinker.DbPrefix + "users WHERE id=10"
+=======
+                CommandText = "SELECT name FROM " + DataBaseLinker.DbPrefix + "users WHERE id=12"
+>>>>>>> origin/master
             };
 
             command.Connection.Open();
@@ -83,6 +95,7 @@ namespace MessengerCoreTests
             Console.WriteLine(result[0][0].ToString());
 
         }
+<<<<<<< HEAD
 
 
         [Test]
@@ -138,4 +151,8 @@ namespace MessengerCoreTests
 
 
 
+=======
+    }
+
+>>>>>>> origin/master
 }

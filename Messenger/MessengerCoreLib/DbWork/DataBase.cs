@@ -1,12 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
+=======
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> origin/master
 using MessengerCoreLib.Interfaces;
 using MySql.Data.MySqlClient;
 
 namespace MessengerCoreLib.DbWork
 {
     /*
+<<<<<<< HEAD
+=======
+     
+     
+>>>>>>> origin/master
      SELECT 
        [DISTINCT | DISTINCTROW | ALL]
        select_expression,...
@@ -28,12 +38,19 @@ namespace MessengerCoreLib.DbWork
         private bool CheckUser(string query)
         {
             var result = Dbquery.ExecuteRequest(query);
+<<<<<<< HEAD
             
+=======
+>>>>>>> origin/master
             return result.Readable;
         }
 
 
+<<<<<<< HEAD
         // Проверка по имени
+=======
+        /// Проверка по имени
+>>>>>>> origin/master
         public bool IfUserExists(string username)
         {
             return
@@ -42,13 +59,18 @@ namespace MessengerCoreLib.DbWork
         }
 
 
+<<<<<<< HEAD
         // Проверка по айди
+=======
+        /// Проверка по айди
+>>>>>>> origin/master
         public bool IfUserExists(int id)
         {
             return CheckUser("SELECT * FROM " + DataBaseLinker.DbPrefix + "users WHERE id='" + id + "'");
         }
 
 
+<<<<<<< HEAD
         // Вход пользователя в чат
         public User Login(string username)
         {
@@ -74,6 +96,20 @@ namespace MessengerCoreLib.DbWork
                     throw new Exception("User is already Online");
 
             }
+=======
+        /// Вход пользователя в чат
+        public User Login(string username)
+        {
+            if (!IfUserExists(username))
+                Dbquery.ExecuteRequest("INSERT INTO " + DataBaseLinker.DbPrefix + "users (`name`) VALUES (\"" + MySqlHelper.EscapeString(username) +
+                                "\")");
+            //else
+            //{
+            //    var refreshtime = Dbquery.Execute("SELECT refreshtime FROM " + DataBaseLinker.DBPrefix + "users WHERE name='" + MySqlHelper.EscapeString(username) + "'");
+            //    if ((IFIFIFIFIF)
+            //        throw new Exception("Already Online!");
+            //}
+>>>>>>> origin/master
 
             var result = Dbquery.ExecuteRequest("SELECT * FROM " + DataBaseLinker.DbPrefix + "users WHERE name='" + MySqlHelper.EscapeString(username) + "'");
 
@@ -81,7 +117,11 @@ namespace MessengerCoreLib.DbWork
         }
 
 
+<<<<<<< HEAD
         // Получение всех пользователей чата
+=======
+        /// Получение всех пользователей чата
+>>>>>>> origin/master
         public IEnumerable<User> GetUsers(int userId)
         {
             if (!IfUserExists(userId))
@@ -95,7 +135,13 @@ namespace MessengerCoreLib.DbWork
         }
 
 
+<<<<<<< HEAD
         // Добавление нового сообщения в базу данных
+=======
+
+
+        /// Добавление нового сообщения в базу данных
+>>>>>>> origin/master
         public void AddMessage(Message message)
         {
             Dbquery.ExecuteRequest("INSERT INTO " + DataBaseLinker.DbPrefix + "messages (`sender`, `reciever`, `text`) VALUES (" + message.SenderId + ", " + message.RecipientId + ", \"" + MySqlHelper.EscapeString(message.Text) + "\")");
@@ -122,13 +168,22 @@ namespace MessengerCoreLib.DbWork
         public IEnumerable<Message> GetMessages(int sender, int reciever)
         {
             var result =
+<<<<<<< HEAD
                 Dbquery.ExecuteRequest("SELECT `time`, `text` FROM " + DataBaseLinker.DbPrefix + "messages WHERE `reciever`=" + reciever + "AND `sender`=" + sender);
+=======
+                Dbquery.ExecuteRequest("SELECT `time`, `text` FROM " + DataBaseLinker.DbPrefix +
+                                "messages WHERE `reciever`=" + reciever +
+                                " AND `sender`=" + sender);
+>>>>>>> origin/master
             var messages =
                 result.DataResult.Select(
                     message => new Message(sender, reciever, (string)message[1], (DateTime)message[0])).ToList();
 
+<<<<<<< HEAD
 
             //нужно ли хранить сообщения )))) 
+=======
+>>>>>>> origin/master
             Dbquery.ExecuteRequest("DELETE FROM " + DataBaseLinker.DbPrefix + "messages WHERE `reciever`=" + reciever +
                             " AND `sender`=" + sender);
 

@@ -1,0 +1,186 @@
+Exceptions through WCF
+.NET*
+Давайте поговорим про передачу исключений через WCF сервис.
+
+Для начала давайте представим ситуацию – у нас есть метод RegisterUser, который соответственно производит регистрацию пользователя. И в случае ошибки в вводе каких-либо данных кидает CustomException.
+Выглядит код регистрации примерно так:
+/// <summary>  
+/// Registers the user.   
+/// </summary>   
+/// <param name="username">The username.</param>   
+/// <param name="password">The password.</param>   
+/// <param name="email">The email.</param>   
+public void RegisterUser(string username, string password, string email)   
+{   
+    if (/*проверяем username*/)   
+        throw new InvalidUsernameException();   
+    if (/*проверяем password*/)   
+        throw new InvalidPasswordException();   
+    if (/*проверяем email*/)   
+        throw new InvalidEmailException(); 
+    ...  
+}* This source code was highlighted with Source Code Highlighter.
+
+А так его использование:
+/// <summary>  
+/// Handles the Click event of the btnRegister control.   
+/// </summary>   
+/// <param name="sender">The source of the event.</param>   
+/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>   
+protected void btnRegister_Click(object sender, EventArgs e)   
+{   
+    try   
+    {   
+        RegisterUser(txtUsernamt.Text, txtPassword.Text, txtEmail.Text);   
+    }   
+    catch (InvalidUsernameException usernameException)   
+    {   
+        // даем знать пользователю произошла ошибка связанная с Username   
+    }   
+    catch (InvalidPasswordException passwordException)   
+    {   
+        // даем знать пользователю произошла ошибка связанная с Password   
+    }   
+    catch (InvalidEmailException emailException)   
+    {   
+        // даем знать пользователю что произошла ошибка связанная с Email   
+    }   
+    ...   * This source code was highlighted with Source Code Highlighter.
+ 
+Всё отлично работает, программист знает как обработать ошибку, пользователь знает где ошибка.
+А теперь представим, что метод RegisterUser у нас находится в WCF сервисе.
+Вот что говорит MSDN по поводу исключений в WCF:
+
+In all managed applications, processing errors are represented by Exception objects. In SOAP-based applications such as WCF applications, service methods communicate processing error information using SOAP fault messages. SOAP faults are message types that are included in the metadata for a service operation and therefore create a fault contract that clients can use to make their operation more robust or interactive. In addition, because SOAP faults are expressed to clients in XML form, it is a highly interoperable type system that clients on any SOAP platform can use, increasing the reach of your WCF application.
+
+Это означает, что для передачи исключения используется SOAP fault message и с ними надо работать несколько иначе.
+Т.е. мы можем бросать только FaultException. 
+Но не все так скучно, у FaultException есть generic перегрузка FaultException<T>. Ей мы и воспользуемся.
+ 
+Создадим специальные классы для наших ошибок:
+/// <summary>  
+///  указывает на ошибку в Username   
+/// </summary>
+[DataContract]  
+class InvalidUsernameFault   
+{   
+    [DataMember]   
+    public string CustomError; 
+    public InvalidUsernameFault()  
+    {   
+    } 
+    public InvalidUsernameFault(string error)  
+    {   
+        CustomError = error;   
+    }   
+}
+ /// <summary>  
+///  указывает на ошибку в Password  
+/// </summary>  [DataContract]  
+class InvalidPasswordFault   
+{   
+    [DataMember]   
+    public string CustomError; 
+    public InvalidPasswordFault()  
+    {   
+    } 
+    public InvalidPasswordFault(string error)  
+    {   
+        CustomError = error;   
+    }   
+}
+ 
+/// <summary>  
+///  указывает на ошибку в Email   
+/// </summary>
+[DataContract]  
+class InvalidEmailFault   
+{   
+    [DataMember]   
+    public string CustomError; 
+    public InvalidEmailFault()  
+    {   
+    } 
+    public InvalidEmailFault(string error)  
+    {   
+        CustomError = error;   
+    }   
+}* This source code was highlighted with Source Code Highlighter.
+ 
+Теперь вернемся к нашему WCF сервису.
+В интерфейсе мы должны указать FaultContract для нашего метода: 
+[OperationContract]
+[FaultContract(typeof(InvalidUsernameFault))]
+[FaultContract(typeof(InvalidPasswordFault))]
+[FaultContract(typeof(InvalidEmailFault))]
+void RegisterUser(string username, string password, string email); 
+
+* This source code was highlighted with Source Code Highlighter.
+
+Ну а теперь мы может быть уверены что наши исключения дойдут до клиента: 
+/// <summary>  
+/// Registers the user.   
+/// </summary>   
+/// <param name="username">The username.</param>   
+/// <param name="password">The password.</param>   
+/// <param name="email">The email.</param>   
+public void RegisterUser(string username, string password, string email)   
+{   
+    if (/*проверяем username*/)   
+        throw new FaultException<InvalidUsernameFault>(new InvalidUsernameFault());   
+    if (/*проверяем password*/)   
+        throw new FaultException<InvalidPasswordFault>(new InvalidPasswordFault());   
+    if (/*проверяем email*/)   
+        throw new FaultException<InvalidEmailFault>(new InvalidEmailFault()); 
+    ...  
+}Или можно бросать FaultException указывая подробное описание ошибки. Удобно, например для логгирования:/// <summary>  
+/// Registers the user.   
+/// </summary>   
+/// <param name="username">The username.</param>   
+/// <param name="password">The password.</param>   
+/// <param name="email">The email.</param>   
+public void RegisterUser(string username, string password, string email)   
+{   
+    if (/*проверяем username*/)   
+        throw new FaultException<InvalidUsernameFault>(new InvalidUsernameFault(“пользователь Medved уже зарегистрирован”));   
+    if (/*проверяем password*/)   
+        throw new FaultException<InvalidPasswordFault>(new InvalidPasswordFault(“пароль ’12345’ недопустим”));   
+    if (/*проверяем email*/)   
+        throw new FaultException<InvalidEmailFault>(new InvalidEmailFault(“уже зарегистрирован пользователь с адресом ya@krasafcheg.ru”)); 
+    ...  
+}* This source code was highlighted with Source Code Highlighter.
+
+ 
+Обрабатывать такие исключения тоже проще простого:
+/// <summary>  
+/// Handles the Click event of the btnRegister control.   
+/// </summary>   
+/// <param name="sender">The source of the event.</param>   
+/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>   
+protected void btnRegister_Click(object sender, EventArgs e)   
+{   
+    try   
+    { 
+        …  
+        wcfclient.RegisterUser(txtUsernamt.Text, txtPassword.Text, txtEmail.Text);   
+    }   
+    catch (FaultException<InvalidUsernameFault> usernameException)   
+    {   
+        // даем знать пользователю произошла ошибка связанная с Username   
+    }   
+    catch (FaultException<InvalidPasswordFault> passwordException)   
+    {   
+        // даем знать пользователю произошла ошибка связанная с Password   
+    }   
+    catch (FaultException<InvalidEmailFault> emailException)   
+    {   
+        // даем знать пользователю что произошла ошибка связанная с Email   
+    } 
+    catch (FaultException faultEx)  
+    {   
+        // обрабатывает нераспознанную ошибку, например произошла ошибка авторизации или 
+        // ошибка соединения с сервером нашего WCF сервиса  
+    }     ...   
+}
+
+* This source code was highlighted with Source Code Highlighter.
