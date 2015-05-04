@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MessengerCoreLib.Components;
 
 namespace MessengerCoreLib.Interfaces
 {

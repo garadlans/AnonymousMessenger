@@ -11,18 +11,14 @@ namespace MessengerCoreTests
     public class Sample
     {
         [Test]
-<<<<<<< HEAD
         public void DayabaseTestInsert()
-=======
-        public void DayabaseTestINSERT()
->>>>>>> origin/master
         {
 
             var DbName = "Messenger";
             var DbHost = "localhost";
             var DbUser = "root";
             var DbPass = "1099";
-            var DbPrefix = "";
+
             
             var command = new MySqlCommand
             {
@@ -31,11 +27,7 @@ namespace MessengerCoreTests
                                                  "Data Source=" + DbHost + ";" +
                                                  "User Id=" + DbUser + ";" +
                                                  "Password=" + DbPass),
-<<<<<<< HEAD
-                CommandText = "INSERT INTO `messenger`.`users` (`name`) VALUES ('Pechenka');" 
-=======
-                CommandText = "INSERT INTO `messenger`.`users` (`name`) VALUES ('Name');" 
->>>>>>> origin/master
+                CommandText = "INSERT INTO `messenger`.`users` (`name`) VALUES ('TestInsert "+DateTime.Now.Millisecond +"');" 
             };
 
             command.Connection.Open();
@@ -54,7 +46,7 @@ namespace MessengerCoreTests
             var DbHost = "localhost";
             var DbUser = "root";
             var DbPass = "1099";
-            var DbPrefix = "";
+            
 
             var command = new MySqlCommand
             {
@@ -63,11 +55,7 @@ namespace MessengerCoreTests
                                                  "Data Source=" + DbHost + ";" +
                                                  "User Id=" + DbUser + ";" +
                                                  "Password=" + DbPass),
-<<<<<<< HEAD
                 CommandText = "SELECT name FROM " + DataBaseLinker.DbPrefix + "users WHERE id=10"
-=======
-                CommandText = "SELECT name FROM " + DataBaseLinker.DbPrefix + "users WHERE id=12"
->>>>>>> origin/master
             };
 
             command.Connection.Open();
@@ -77,11 +65,11 @@ namespace MessengerCoreTests
             var reader = command.ExecuteReader();
 
             var result = new List<List<object>>();
-            var readable = false;
+            
 
             while (reader.Read())
             {
-                readable = true;
+               
                 var current = new List<object>();
 
                 for (var i = 0; i < reader.FieldCount; ++i)
@@ -95,7 +83,6 @@ namespace MessengerCoreTests
             Console.WriteLine(result[0][0].ToString());
 
         }
-<<<<<<< HEAD
 
 
         [Test]
@@ -106,7 +93,7 @@ namespace MessengerCoreTests
             var DbHost = "localhost";
             var DbUser = "root";
             var DbPass = "1099";
-            var DbPrefix = "";
+            
 
             var command = new MySqlCommand
             {
@@ -125,11 +112,11 @@ namespace MessengerCoreTests
             var reader = command.ExecuteReader();
 
             var result = new List<List<object>>();
-            var readable = false;
+            
 
             while (reader.Read())
             {
-                readable = true;
+                
                 var current = new List<object>();
 
                 for (var i = 0; i < reader.FieldCount; ++i)
@@ -146,13 +133,4 @@ namespace MessengerCoreTests
 
         }
     }
-
-
-
-
-
-=======
-    }
-
->>>>>>> origin/master
 }

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MessengerCoreLib
+namespace MessengerCoreLib.Components
 {
-    [Serializable]
-    public class User : ISerializable
+    [DataContract]
+    public class User 
     {
         public User(int id, bool online, string name)
         {
@@ -16,20 +12,13 @@ namespace MessengerCoreLib
             Online = online;
             Id = id;
         }
-
+        [DataMember]
         public string Username { get; set; }
+        [DataMember]
         public bool Online { get; set; }
+        [DataMember]
         public int Id { get; set; }
-
         
-
-        void ISerializable.GetObjectData(SerializationInfo oInfo, StreamingContext oContext)
-        {
-            oInfo.AddValue("UserName", Username);
-            oInfo.AddValue("Online", Online);
-            oInfo.AddValue("UserID", Id);
-        }
-
         public bool Equals(User other)
         {
             return string.Equals(Username, other.Username) && Online.Equals(other.Online) && Id == other.Id;

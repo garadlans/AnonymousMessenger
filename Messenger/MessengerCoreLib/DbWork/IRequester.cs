@@ -9,6 +9,7 @@ namespace MessengerCoreLib.DbWork
     public interface IRequester
     {
         DataBaseGetter ExecuteRequest(string request);
+
     }
 }
 

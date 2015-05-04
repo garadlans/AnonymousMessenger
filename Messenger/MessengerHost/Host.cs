@@ -20,7 +20,7 @@ namespace MessengerHost
             DataBaseLinker.DbPass = "1099";
             DataBaseLinker.DbPrefix = "";
 
-            Console.WriteLine("<--SERVER IS STARTING-->");
+            
            
             try
             {

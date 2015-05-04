@@ -23,6 +23,7 @@ namespace MessengerCoreLib.Components
             {
                 if (exception.Message == "A user with the same name already online!")
                     throw new FaultException("A user with the same name already online!");
+               
                 throw new FaultException("SERVER WATAFACKING");
             }
         }

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MessengerCoreLib
+namespace MessengerCoreLib.Components
 {
-    [Serializable]
-    public class Message : ISerializable
+    [DataContract]
+    public class Message 
     {
         public Message(int sender, int getter, string text, DateTime time)
         {
@@ -17,18 +13,14 @@ namespace MessengerCoreLib
             Text = text;
             Time = Time;
         }
-
+        [DataMember]
         public int SenderId { get; set; }
+        [DataMember]
         public int RecipientId { get; set; }
+        [DataMember]
         public string Text { get; set; }
+        [DataMember]
         public DateTime Time { get; set; }
 
-        void ISerializable.GetObjectData(SerializationInfo oInfo, StreamingContext oContext)
-        {
-            oInfo.AddValue("SenderId", SenderId);
-            oInfo.AddValue("RecipientId", RecipientId);
-            oInfo.AddValue("Text", Text);
-            oInfo.AddValue("Time", Time.ToShortDateString() + "-" + Time.ToLongTimeString());
-        }
     }
 }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MessengerCoreLib;
+using MessengerCoreLib.Components;
 using MessengerCoreLib.DbWork;
 using Moq;
 using NUnit.Framework;
+using NUnit.Util;
 
 namespace MessengerCoreTests
 {
@@ -45,22 +47,25 @@ namespace MessengerCoreTests
             mock.Verify(w => w.ExecuteRequest(It.IsAny<string>()));
         }
 
-        [Test]
-        public void Login()
-        {
-            var mock = new Mock<IRequester>();
-            mock.Setup(o => o.ExecuteRequest(It.IsAny<string>())).Returns(new DataBaseGetter(
-                new List<List<object>>
-                {
-                    new List<object> { 1, DateTime.Now,  "admin"}, 
-                    new List<object> { 2, DateTime.Now , "vanya"}
-                }, true));
-
-            var dataBase = new DataBase { Dbquery = mock.Object };
-            dataBase.Login("admin");
-
-            mock.Verify(w => w.ExecuteRequest(It.IsAny<string>()));
-        }
+//        [Test]
+//        public void Login()
+//        {
+//            var mock = new Mock<IRequester>();
+//            mock.Setup(o => o.ExecuteRequest(It.IsAny<string>())).Returns(new DataBaseGetter(
+//                new List<List<object>>
+//                {
+//                    new List<object> { 1, DateTime.Now,  "admin"}, 
+//                    new List<object> { 2, DateTime.Now , "vanya"}
+//                }, true));
+//
+//            var dataBase = new DataBase { Dbquery = mock.Object };
+//            dataBase.Login("admin");
+//
+//
+//            
+//            //Assert.Throws(mock.Verify(w => w.ExecuteRequest(It.IsAny<string>())), "asdasd");
+//            Assert.Throws((typeof(SystemException)),() => mock.Verify(w => w.ExecuteRequest(It.IsAny<string>())));
+//        }
 
         [Test]
         public void GetUsers()

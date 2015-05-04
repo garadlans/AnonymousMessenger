@@ -1,0 +1,93 @@
+Data Contract
+
+A data contract is a formal agreement between a service and a client that abstractly describes the data to be exchanged.
+
+Data contract can be explicit or implicit. Simple type such as int, string etc has an implicit data contract. User defined object are explicit or Complex type, for which you have to define a Data contract using [DataContract] and [DataMember] attribute.
+
+A data contract can be defined as follows:
+
+It describes the external format of data passed to and from service operations
+It defines the structure and types of data exchanged in service messages
+It maps a CLR type to an XML Schema
+t defines how data types are serialized and deserialized. Through serialization, you convert an object into a sequence of bytes that can be transmitted over a network. Through deserialization, you reassemble an object from a sequence of bytes that you receive from a calling application.
+It is a versioning system that allows you to manage changes to structured data
+We need to include System.Runtime.Serialization reference to the project. This assembly holds the DataContract and DataMember attribute.
+
+Create user defined data type called Employee. This data type should be identified for serialization and deserialization by mentioning with [DataContract] and [DataMember] attribute.
+
+ [ServiceContract]
+    public interface IEmployeeService
+    {
+        [OperationContract]
+        Employee GetEmployeeDetails(int EmpId);
+    }
+
+    [DataContract]
+    public class Employee
+    {
+        private string m_Name;
+        private int m_Age;
+        private int m_Salary;
+        private string m_Designation;
+        private string m_Manager;
+
+        [DataMember]
+        public string Name
+        {
+            get { return m_Name; }
+            set { m_Name = value; }
+        }
+
+        [DataMember]
+        public int Age
+        {
+            get { return m_Age; }
+            set { m_Age = value; }
+        }
+
+        [DataMember]
+        public int Salary
+        {
+            get { return m_Salary; }
+            set { m_Salary = value; }
+        }
+
+        [DataMember]
+        public string Designation
+        {
+            get { return m_Designation; }
+            set { m_Designation = value; }
+        }
+
+        [DataMember]
+        public string Manager
+        {
+            get { return m_Manager; }
+            set { m_Manager = value; }
+        }
+
+    }
+Implementation of the service class is shown below. In GetEmployee method we have created the Employee instance and return to the client. Since we have created the data contract for the Employee class, client will aware of this instance whenever he creates proxy for the service.
+
+public class EmployeeService : IEmployeeService
+    {
+        public Employee GetEmployeeDetails(int empId)
+        {
+            
+            Employee empDetail = new Employee();
+
+            //Do something to get employee details and assign to 'empDetail' properties
+
+            return empDetail;
+        }
+    }
+Client side
+
+On client side we can create the proxy for the service and make use of it. The client side code is shown below.
+
+protected void btnGetDetails_Click(object sender, EventArgs e)
+        {
+            EmployeeServiceClient objEmployeeClient = new EmployeeServiceClient();
+            Employee empDetails;
+            empDetails = objEmployeeClient.GetEmployeeDetails(empId);
+//Do something on employee details
