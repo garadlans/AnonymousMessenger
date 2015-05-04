@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\MessageHistory.cs" />
+    <Compile Include="Components\MessengerClientService.cs" />
     <Compile Include="Components\SeenUsers.cs" />
+    <Compile Include="Events\LoginArgs.cs" />
+    <Compile Include="Events\SelectedIndexActionArgs.cs" />
+    <Compile Include="Events\SendMessageArgs.cs" />
+    <Compile Include="Interfaces\ILoginClientService.cs" />
     <Compile Include="Interfaces\IMessengerClientService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\MessengerServiceReference\Reference.cs">

@@ -38,5 +38,9 @@ namespace MessengerClientLib.Interfaces
         // TODO 
         void SetLoggedUser(User loggedUser);
 
+        void SendMessage(Message message);
+
+        void GetNewMessages(object sender, EventArgs eventArgs);
+
     }
 }

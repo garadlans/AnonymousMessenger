@@ -18,9 +18,9 @@
         <TextBox HorizontalAlignment="Left" Height="55" Margin="193,130,0,0" TextWrapping="Wrap" Text="Тут типо что то пишем......."  
                   BorderThickness="1" VerticalAlignment="Top" Width="341" Grid.Row="2"/>
 
-        <TextBox Height="308" HorizontalAlignment="Left" Margin="193,7,0,0" Name="chatBox" VerticalAlignment="Top" Width="427" IsReadOnly="True" VerticalScrollBarVisibility="Visible" Grid.RowSpan="3" Grid.ColumnSpan="2" />
+        <TextBox Height="308" HorizontalAlignment="Left" Margin="193,7,0,0" Name="chatBox" VerticalAlignment="Top" Width="427" IsReadOnly="True" VerticalScrollBarVisibility="Visible" Grid.RowSpan="3" Grid.ColumnSpan="2" TextChanged="chatBox_TextChanged" />
         <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="7,7,0,0" Name="label3" VerticalAlignment="Top" Width="64" />
-        <TextBox Height="304" HorizontalAlignment="Left" Margin="7,71,0,0" Name="messagesFrom" VerticalAlignment="Top" Width="168" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Grid.RowSpan="3" />
+        <TextBox Height="304" HorizontalAlignment="Left" Margin="7,71,0,0" Name="messagesFrom" VerticalAlignment="Top" Width="168" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Grid.RowSpan="3" TextChanged="messagesFrom_TextChanged" />
         <Button Content="Send" Height="55" HorizontalAlignment="Left" Margin="4,130,0,0" Name="sendMessageButton" VerticalAlignment="Top" Width="71" Grid.Row="2" Click="sendMessageButton_Click" Grid.Column="1"/>
         <MediaElement HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="58" Margin="117,8,0,0"/>
         <Button Content="Logout"  Name="logoutChatButton" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="61" Height="26" Click="Button_Click"/>

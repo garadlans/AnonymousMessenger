@@ -24,14 +24,6 @@ namespace MessengerClientGUI
             InitializeComponent();
         }
 
-        private void sendMessageButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }
