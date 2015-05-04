@@ -1,0 +1,16 @@
+D:\Visual Studio\Messenger\MessengerHost\bin\Debug\MessengerHost.exe.config
+D:\Visual Studio\Messenger\MessengerHost\bin\Debug\MessengerHost.exe
+D:\Visual Studio\Messenger\MessengerHost\bin\Debug\MessengerHost.pdb
+D:\Visual Studio\Messenger\MessengerHost\obj\Debug\MessengerHost.csprojResolveAssemblyReference.cache
+D:\Visual Studio\Messenger\MessengerHost\obj\Debug\MessengerHost.exe
+D:\Visual Studio\Messenger\MessengerHost\obj\Debug\MessengerHost.pdb
+D:\Visual Studio\Messenger\MessengerHost\bin\Debug\MessengerCoreLib.dll
+D:\Visual Studio\Messenger\MessengerHost\bin\Debug\MessengerCoreLib.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\bin\Debug\MessengerHost.exe.config
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\bin\Debug\MessengerHost.exe
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\bin\Debug\MessengerHost.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\bin\Debug\MessengerCoreLib.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\bin\Debug\MessengerCoreLib.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\obj\Debug\MessengerHost.csprojResolveAssemblyReference.cache
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\obj\Debug\MessengerHost.exe
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerHost\obj\Debug\MessengerHost.pdb

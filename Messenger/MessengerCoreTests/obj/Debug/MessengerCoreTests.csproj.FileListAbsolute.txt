@@ -1,0 +1,13 @@
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\MessengerCoreTests.dll.config
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\MessengerCoreTests.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\MessengerCoreTests.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\MessengerCoreLib.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\Moq.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\MySql.Data.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\nunit.framework.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\MessengerCoreLib.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\Moq.xml
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\bin\Debug\nunit.framework.xml
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\obj\Debug\MessengerCoreTests.csprojResolveAssemblyReference.cache
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\obj\Debug\MessengerCoreTests.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerCoreTests\obj\Debug\MessengerCoreTests.pdb

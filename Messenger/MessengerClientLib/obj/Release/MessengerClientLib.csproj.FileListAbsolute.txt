@@ -1,0 +1,12 @@
+D:\Visual Studio\Messenger\MessengerClientLib\obj\Release\MessengerClientLib.csprojResolveAssemblyReference.cache
+D:\Visual Studio\Messenger\MessengerClientLib\bin\Release\MessengerClientLib.dll.config
+D:\Visual Studio\Messenger\MessengerClientLib\bin\Release\MessengerClientLib.dll
+D:\Visual Studio\Messenger\MessengerClientLib\bin\Release\MessengerClientLib.pdb
+D:\Visual Studio\Messenger\MessengerClientLib\obj\Release\MessengerClientLib.dll
+D:\Visual Studio\Messenger\MessengerClientLib\obj\Release\MessengerClientLib.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientLib\bin\Release\MessengerClientLib.dll.config
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientLib\bin\Release\MessengerClientLib.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientLib\bin\Release\MessengerClientLib.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientLib\obj\Release\MessengerClientLib.dll
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientLib\obj\Release\MessengerClientLib.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientLib\obj\Release\MessengerClientLib.csprojResolveAssemblyReference.cache

@@ -1,0 +1,15 @@
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\bin\Release\MessengerClientGUI.exe.config
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\bin\Release\MessengerClientGUI.exe
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\bin\Release\MessengerClientGUI.pdb
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI.csprojResolveAssemblyReference.cache
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MainWindow.baml
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\Chat.baml
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MainWindow.g.cs
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\Chat.g.cs
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\App.g.cs
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI_MarkupCompile.cache
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI.g.resources
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI.Properties.Resources.resources
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI.csproj.GenerateResource.Cache
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI.exe
+D:\Visual Studio\AnonymousMessenger\Messenger\MessengerClientGUI\obj\Release\MessengerClientGUI.pdb
