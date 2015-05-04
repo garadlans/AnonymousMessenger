@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 namespace MessengerClientGUI
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для LoginForm.xaml
     /// </summary>
-    public  class MainWindow : Window
+    public  class LoginForm : Window
     {
 
     }

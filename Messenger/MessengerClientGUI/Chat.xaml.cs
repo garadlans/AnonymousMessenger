@@ -15,13 +15,23 @@ using System.Windows.Shapes;
 namespace MessengerClientGUI
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Chat.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Chat : Window
     {
-        public Window1()
+        public Chat()
         {
             InitializeComponent();
+        }
+
+        private void sendMessageButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
