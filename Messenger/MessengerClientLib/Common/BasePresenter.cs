@@ -1,6 +1,4 @@
-﻿using WorkersManagement.IoC;
-
-namespace Presenter.Common
+﻿namespace MessengerClientLib.Common
 {
     public abstract class BasePresenter<TView> : IPresenter
         where TView : IView

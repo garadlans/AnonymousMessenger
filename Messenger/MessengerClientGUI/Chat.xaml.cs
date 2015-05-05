@@ -24,6 +24,16 @@ namespace MessengerClientGUI
             InitializeComponent();
         }
 
+        private void sendMessageButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void chatBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
        
     }
 }

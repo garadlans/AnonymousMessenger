@@ -1,4 +1,4 @@
-﻿namespace Presenter.Common
+﻿namespace MessengerClientLib.Common
 {
     public interface IPresenter
     {

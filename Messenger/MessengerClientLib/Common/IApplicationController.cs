@@ -1,21 +1,16 @@
-﻿using Presenter.Common;
+﻿
 
-namespace WorkersManagement.IoC
+namespace MessengerClientLib.Common
 {
     public interface IApplicationController
     {
-        IApplicationController RegisterView<TView, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer)
+        IApplicationController RegisterView<TView, TImplementation>()
             where TImplementation : class, TView
             where TView : IView;
 
         IApplicationController RegisterInstance<TArgument>(TArgument instance);
 
-        IApplicationController RegisterInstance<TArgument>(TArgument instance, LifeTime lifeTime = LifeTime.PerContainer);
-
         IApplicationController RegisterService<TService, TImplementation>()
-            where TImplementation : class, TService;
-
-        IApplicationController RegisterService<TService, TImplementation>(LifeTime lifeTime = LifeTime.PerContainer)
             where TImplementation : class, TService;
 
         void Run<TPresenter>()
