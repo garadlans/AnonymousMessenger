@@ -1,43 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using LightInject;
+using ServiceContainer = LightInject.ServiceContainer;
 using MessengerClientLib.Common;
 
 namespace MessengerClientLib.Components
 {
     public class LightInjectAdapder : IContainer
     {
+
+        private readonly IServiceContainer _container = new ServiceContainer();
+
+        public LightInjectAdapder()
+        {
+        }
+
+        public LightInjectAdapder(IServiceContainer container)
+        {
+            _container = container;
+        }
         public void Register<TService, TImplementation>() where TImplementation : TService
         {
-            //TODO
+            _container.Register<TService, TImplementation>(); // зарегали
         }
 
         public void Register<TService>()
         {
-            //TODO
+            _container.Register<TService>();
         }
+
 
         public void RegisterInstance<T>(T instance)
         {
-            //TODO
+            _container.RegisterInstance(instance);
         }
 
         public TService Resolve<TService>()
         {
-            //TODO
+            return _container.GetInstance<TService>();
         }
 
         public bool IsRegistered<TService>()
         {
-            //TODO
+            return _container.CanGetInstance(typeof(TService), string.Empty);
         }
 
         public void Register<TService, TArgument>(Expression<Func<TArgument, TService>> factory)
         {
-            //TODO
+            _container.Register(serviceFactory => factory); // фабрика
         }
     }
 }
