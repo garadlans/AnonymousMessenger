@@ -42,15 +42,19 @@
       <HintPath>..\packages\LightInject.Web.1.0.0.4\lib\net45\LightInject.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ApplicationController.cs" />
@@ -59,6 +63,8 @@
     <Compile Include="Common\IContainer.cs" />
     <Compile Include="Common\IPresenter.cs" />
     <Compile Include="Common\IView.cs" />
+    <Compile Include="Components\LightInjectAdapder.cs" />
+    <Compile Include="Components\LoginClientService.cs" />
     <Compile Include="Components\MessageHistory.cs" />
     <Compile Include="Components\MessengerClientService.cs" />
     <Compile Include="Components\SeenUsers.cs" />
@@ -66,7 +72,11 @@
     <Compile Include="Events\SelectedIndexActionArgs.cs" />
     <Compile Include="Events\SendMessageArgs.cs" />
     <Compile Include="Interfaces\ILoginClientService.cs" />
+    <Compile Include="Interfaces\ILoginWindow.cs" />
     <Compile Include="Interfaces\IMessengerClientService.cs" />
+    <Compile Include="Interfaces\IMessengerWindow.cs" />
+    <Compile Include="Presenter\LoginPresenter.cs" />
+    <Compile Include="Presenter\MessengerPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\MessengerServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

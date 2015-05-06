@@ -18,25 +18,13 @@
             return this;
         }
 
-        public IApplicationController RegisterView<TView, TImplementation>(LifeTime lifeTime)
-            where TImplementation : class, TView
-            where TView : IView
-        {
-                _container.Register<TView, TImplementation>(lifeTime);
-            return this;
-        }
-
         public IApplicationController RegisterInstance<TArgument>(TArgument instance)
         {
             _container.RegisterInstance(instance);
             return this;
         }
 
-        public IApplicationController RegisterInstance<TInstance>(TInstance instance, LifeTime lifeTime)
-        {
-            _container.RegisterInstance(instance);
-            return this;
-        }
+      
 
         public IApplicationController RegisterService<TModel, TImplementation>()
             where TImplementation : class, TModel
@@ -45,12 +33,7 @@
             return this;
         }
 
-        public IApplicationController RegisterService<TModel, TImplementation>(LifeTime lifeTime)
-            where TImplementation : class, TModel
-        {
-            _container.Register<TModel, TImplementation>();
-            return this;
-        }
+
 
         public void Run<TPresenter>() where TPresenter : class, IPresenter
         {

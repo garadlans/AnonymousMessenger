@@ -25,12 +25,9 @@ namespace MessengerClientLib.Presenter
         private void RunLogin(object sender, LoginArgs e)
         {
             var logged = _loginService.Login(e.Username);
-            if (logged != null)
-            {
-                  //TODO
-//                Controller.Run<MessengerPresenter, User>(logged);
-                View.Close();
-            }
+            if (logged == null) return;
+            Controller.Run<MessengerPresenter, User>(logged);
+            View.Close();
         }
     }
 }

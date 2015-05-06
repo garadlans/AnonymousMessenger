@@ -4,6 +4,9 @@
         Title="LoginWindow" Height="160" Width="300" MaxHeight="160" MaxWidth="300"
         MinHeight="160" MinWidth="300">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Button Content="Войти" HorizontalAlignment="Left" Margin="72,0,0,10" Width="160" Height="30" VerticalAlignment="Bottom" Click="loggin_button"/>
         <TextBox HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Margin="72,47,0,0"/>
         <Label Content="Введите имя" FontSize="24" FontFamily="Consolas" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="72,4,0,0" VerticalAlignment="Top" Width="160"/>
