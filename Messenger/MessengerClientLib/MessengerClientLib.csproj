@@ -57,6 +57,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
     <Compile Include="Common\ApplicationController.cs" />
     <Compile Include="Common\BasePresenter.cs" />
     <Compile Include="Common\IApplicationController.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Common\IView.cs" />
     <Compile Include="Components\LightInjectAdapder.cs" />
     <Compile Include="Components\LoginClientService.cs" />
+>>>>>>> origin/master
     <Compile Include="Components\MessageHistory.cs" />
     <Compile Include="Components\MessengerClientService.cs" />
     <Compile Include="Components\SeenUsers.cs" />

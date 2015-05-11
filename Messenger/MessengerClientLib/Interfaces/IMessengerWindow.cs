@@ -4,14 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+<<<<<<< HEAD
+
+=======
 using MessengerClientLib.Common;
+>>>>>>> origin/master
 using MessengerClientLib.Components;
 using MessengerClientLib.Events;
 
 
 namespace MessengerClientLib.Interfaces
 {
+<<<<<<< HEAD
+    public interface IMessengerWindow 
+=======
     public interface IMessengerWindow : IView
+>>>>>>> origin/master
     {
         Label LabelName { get; set; }
         ListBox ListBoxUsers { get; set; }
